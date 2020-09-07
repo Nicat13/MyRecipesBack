@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Axl/WqTtZySnOzUsF668cL34ZPok0grM0Q7Kt6PFXFtz7Lvtmr9DBeo+NJA6rUIO/bY1nC6zN4Z4iYVDA8bofg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\Desktop\\Temporary_Files\\BlazorApp1\\BlazorApp1\\Shared\\BlazorApp1.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

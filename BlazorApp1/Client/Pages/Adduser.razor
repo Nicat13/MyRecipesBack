@@ -1,0 +1,30 @@
+﻿@page "/Adduser"
+@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Components.NavigationManager Navigation
+
+<h3>adduser</h3>
+
+
+
+<label asp-for="Name">Name</label>
+<input asp-for="Name" @bind="@user.Name" type="text" />
+
+<label asp-for="Surname">Surname</label>
+<input asp-for="Surname" @bind="@user.Surname" type="text" />
+<label asp-for="Iconname">Iconname</label>
+<input asp-for="Iconname" @bind="@user.IconName" type="text" />
+
+<button type="submit" class="btn btn-primary" @onclick="@(async () => await Createuser())">Save</button>
+
+
+
+@code {
+    salam user = new salam();
+
+    protected async Task Createuser()
+    {
+        await Http.PostAsJsonAsync("/api/User/adduser", user);
+        Navigation.NavigateTo("/users");
+    }
+}

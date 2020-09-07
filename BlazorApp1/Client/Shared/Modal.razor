@@ -1,0 +1,56 @@
+﻿@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+
+@if (ModalDisplay)
+{
+
+    <div class="modal fade show d-block scale-up-center" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete Operation</h5>
+                    <button @onclick="() => onconfirmationchanged(false)" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Delete @user.Name @user.Surname ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => onconfirmationchanged(false)">Close</button>
+                    <button type="button" class="btn btn-danger" @onclick="() => onconfirmationchanged(true)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+}
+
+
+@code {
+
+    protected bool ModalDisplay { get; set; }
+
+    [Parameter]
+    public salam user { get; set; }
+
+    public void Open()
+    {
+        ModalDisplay = true;
+        StateHasChanged();
+    }
+
+    [Parameter]
+    public EventCallback<bool> Onconfirmation { get; set; }
+
+
+    protected async Task onconfirmationchanged(bool value)
+    {
+        ModalDisplay = false;
+        await Onconfirmation.InvokeAsync(value);
+    }
+
+
+}

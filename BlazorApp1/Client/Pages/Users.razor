@@ -1,0 +1,58 @@
+﻿@page "/users"
+@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Components.NavigationManager Navigation
+
+
+<h3>Users</h3>
+@if (users == null)
+{
+<img style="text-align:center;" src="/img/Preloader.gif" alt="Alternate Text"  width="231"/>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <UserTable user="user" Onconfirmation="Test"></UserTable>
+            }
+
+        </tbody>
+    </table>
+
+    <a href="adduser">
+        <span style="color:black;" class="oi oi-plus" aria-hidden="true"></span> Create User
+    </a>
+}
+
+
+@code {
+    public salam[] users;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await Http.GetFromJsonAsync<salam[]>("api/User/users");
+    }
+
+
+    public async Task Test(bool checker)
+    {
+        if (checker == true)
+        {
+            users = null;
+            users = await Http.GetFromJsonAsync<salam[]>("api/User/users");
+        }
+    }
+
+}

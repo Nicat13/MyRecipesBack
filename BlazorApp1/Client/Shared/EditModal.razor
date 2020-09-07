@@ -1,0 +1,67 @@
+﻿@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+@if (ModalDisplay)
+{
+ 
+<div class="modal fade show d-block scale-up-center" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                <button  @onclick="() => onconfirmationchanged(false)" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                @if (users.Id == 0)
+                {
+                 <img width="231" src="/img/Preloader.gif" alt="Alternate Text" />
+                }
+                else
+                {
+
+                <form>
+                    <div class="form-group">
+                        <label asp-for="Name" class="col-form-label">Name</label>
+                       <input asp-for="Name" type="text" class="form-control" @bind="@users.Name" >
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Surname" class="col-form-label">Surname</label>
+                        <textarea asp-for="Surname" class="form-control" @bind="@users.Surname"></textarea>
+                    </div>
+                </form>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"  @onclick="() => onconfirmationchanged(false)">Close</button>
+                <button type="button" class="btn btn-success" @onclick="() => onconfirmationchanged(true)">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+}
+
+
+
+@code {
+    protected bool ModalDisplay { get; set; }
+    [Parameter]
+    public salam users { get; set; }
+
+    public  void  Open()
+    {       
+        ModalDisplay = true;
+        StateHasChanged();
+    }
+
+    [Parameter]
+    public EventCallback<bool> Onconfirmation { get; set; }
+
+    protected async Task onconfirmationchanged(bool value)
+    {
+        ModalDisplay = false;
+        await Onconfirmation.InvokeAsync(value);
+    }
+}

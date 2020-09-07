@@ -1,0 +1,23 @@
+﻿@inject IJSRuntime jsRuntime
+@for (int i = 0; i < memberRef.Count(); i++)
+{
+    var i2 = i;
+    <div class="col-4">
+        <i @onclick="() => onconfirmationchanged(i2)" @ref="memberRef[i2]" class="scale-up-center icon img-fluid fas fa-plus-circle"></i>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public EventCallback<bool> Onconfirmation { get; set; }
+    [Parameter]
+    public EventCallback<ElementReference> clicked_element { get; set; }
+    private ElementReference[] memberRef { get; set; } = new ElementReference[3];
+
+    protected async Task onconfirmationchanged(int value)
+    {
+        await clicked_element.InvokeAsync(memberRef[value]);
+        await Onconfirmation.InvokeAsync(true);
+
+    }
+}

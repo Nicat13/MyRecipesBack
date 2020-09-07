@@ -1,0 +1,52 @@
+﻿@page "/"
+@inject AppData AppData
+@using BlazorApp1.Shared.Models
+<div class="row">
+    <div style="padding-bottom: 20px;" class="col-12 d-flex justify-content-center">
+        <div class="col-md-12 col-lg-7 d-flex justify-content-center align-item-center">
+            <div class="findrecipes">
+                <img src="img/1589904778102_upscaled_image_x4.png" style="visibility: hidden; width: 100%;" alt="">
+                <a href="/result" class="btn btn-info" style="float: right;">Find Recipes</a>
+                @foreach (var item in classes)
+                {
+                    <div class="@item icons">
+                        <div class="row justify-content-center">
+                            <PlusIcon @ref="plusmodal" clicked_element="Test" Onconfirmation="onclikced"></PlusIcon>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <h1>First Page</h1>
+    <input type="number" @bind="AppData.Age" />
+    <br>
+    <a href="/result">Go to Page 2</a>
+
+    <IngirdentsModal @ref="Modal" clickedelement="@clickedelement" ids="getids"></IngirdentsModal>
+</div>
+@code{
+    public string[] classes = { "firsticons", "secondicons", "thirdicons" };
+    public BlazorApp1.Client.Shared.IngirdentsModal Modal { get; set; }
+    public BlazorApp1.Client.Shared.PlusIcon plusmodal { get; set; }
+    public ElementReference clickedelement { get; set; }
+    public void Test(ElementReference element)
+    {
+        clickedelement = element;
+    }
+
+    public void onclikced(bool checker)
+    {
+        if (checker)
+        {
+            Modal.Open();
+        }
+    }
+
+    public void getids(string id)
+    {
+        if (id != null)
+        {
+        }
+    }
+}

@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\bin\Release\netstandard2.1\BlazorApp1.Shared.deps.json
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\bin\Release\netstandard2.1\BlazorApp1.Shared.dll
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\bin\Release\netstandard2.1\BlazorApp1.Shared.pdb
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.AssemblyInfo.cs
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.dll
+C:\Users\User\Desktop\Temporary_Files\BlazorApp1\BlazorApp1\Shared\obj\Release\netstandard2.1\BlazorApp1.Shared.pdb

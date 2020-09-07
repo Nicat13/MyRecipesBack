@@ -1,0 +1,123 @@
+header {
+    padding: 0;
+    width: 100%;
+    background-color: #1782DD;
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler:focus{
+    outline:none;
+}
+#logo{
+    width: 113px;
+}
+.findrecipes {
+    position: relative;
+     background-image: url("../img/1589904778102_upscaled_image_x4.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .findrecipes img {
+    width: 100%;
+    height: auto;
+  }
+
+  .findrecipes .icons {
+    position: absolute;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: black;
+    font-size: 22px;
+    text-align: center;
+  }
+  .findrecipes .icon{
+    cursor: pointer;
+  }
+.firsticons{
+    top: 14%;
+}
+.secondicons{
+    top: 21%;
+}
+.thirdicons {
+    top: 40%;
+}
+
+@media only screen and (max-width: 500px) {
+    .findrecipes .icons {
+        font-size: 18px;
+    }
+  }
+
+@media only screen and (max-width: 410px) {
+  
+    .findrecipes .col-4{
+        max-width: 30.333333% !important;
+        padding-left: 8px !important;
+    }
+
+    .findrecipes .icons {
+        font-size: 15px;
+    }
+    .firsticons{
+        top: 13%;
+    }
+    .secondicons{
+        top: 20%;
+    }
+
+  }
+
+  @media only screen and (max-width: 306px) {
+  
+    .findrecipes .col-4{
+        max-width: 29.333333% !important;
+        padding-left: 8px !important;
+    }
+
+    .findrecipes .icons {
+        font-size: 13px;
+    }
+    .firsticons{
+        top: 13%;
+    }
+    .secondicons{
+        top: 19%;
+    }
+
+  }
+
+  .navbar-nav{
+      text-align: center;
+  }
+
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAepmNa2o2aEuVS2WkriWXvgAAAAACAAAAAAAQZgAAAAEAACAAAAApHl9nkrmSrLq4fkT4nW8DZWi8UH9tI2FroqHXAHeYvgAAAAAOgAAAAAIAACAAAAAtHDYN0XdX9947N0eUKBdm5Ga6U+zavn7nFR0OYkR4EiAAAAAN3VUP60fwALBboFqchl+7qi9otcETPGRry38XcSY7+kAAAACUnFXkKdgnJkmLyMpatqFevm4tMhc0ZwmXWS7bsCNF4ykole45rg2ehgW7Gq261m9LeeccIjs+z+fLCANl50Gg</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5063.site4now.net%3bInitial Catalog=DB_A659C0_Blazorapp%3bUser Id=DB_A659C0_Blazorapp_admin%3bPassword=aprel132000</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="BlazorApp1.Server.DAL.BlazorappDB">
+      <Value>Data Source=SQL5063.site4now.net%3bInitial Catalog=DB_A659C0_Blazorapp%3bUser Id=DB_A659C0_Blazorapp_admin%3bPassword=aprel132000</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

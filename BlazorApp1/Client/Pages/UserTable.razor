@@ -1,0 +1,54 @@
+﻿@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Components.NavigationManager Navigation
+
+
+<tr>
+    <td>@user.Id</td>
+    <td>@user.Name</td>
+    <td>@user.Surname</td>
+    <td>
+        <button @onclick="() =>editModal.Open()" style="color:white;" type="button" class="btn btn-warning" data-toggle="modal">
+            Edit
+        </button>
+    </td>
+    <td>
+        <button @onclick="() =>Modal.Open()" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            Delete
+        </button>
+    </td>
+</tr>
+
+<Modal @ref="Modal" Onconfirmation="Test" user="user"></Modal>
+<EditModal @ref="editModal" Onconfirmation="edittest" users="user"></EditModal>
+
+@code {
+    [Parameter]
+    public salam user { get; set; }
+
+    public BlazorApp1.Client.Shared.Modal Modal { get; set; }
+    public BlazorApp1.Client.Shared.EditModal editModal { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> Onconfirmation { get; set; }
+
+
+    protected async void Test(bool checker)
+    {
+        if (checker == true)
+        {
+            await Http.PostAsJsonAsync("/api/User/delete", user);
+        }
+        await Onconfirmation.InvokeAsync(checker);
+    }
+
+    protected async void edittest(bool checker)
+    {
+        if (checker == true)
+        {
+            await Http.PutAsJsonAsync("/api/User/edit", user);
+        }
+        await Onconfirmation.InvokeAsync(checker);
+    }
+
+}
